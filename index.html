@@ -2,76 +2,267 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Young+Serif&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
   
-  <title>Frontend Mentor | Recipe page</title>
+  <title>Portfolio | Recipe Page</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+<style>
+  @media only screen and (max-width: 600px) {
+    main {
+      width: 100% !important;
+      top: 0 !important;
+      padding: 0 !important;
+      border-radius: 0px !important;
+    }
+    
+    main img {
+      border-radius: 0px !important;
+    }
+    
+    footer {
+      display: none !important;
+    }
+    
+    .recipe {
+      padding: 15px !important;
+    }
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: hsl(30, 54%, 90%);
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: hsl(30, 10%, 34%);
+    margin: 0;
+  }
+  
+  h1 {
+    font-family: 'Young Serif', serif;
+    font-weight: 400;
+    color: hsl(24, 5%, 18%);
+    font-size: xx-large;
+  }
+  
+  h2 {
+    font-family: 'Young Serif', serif;
+    font-weight: 400;
+    color: hsl(14, 45%, 36%);
+    font-size: 1.8em;
+  }
+  
+  h3 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 600;
+    color: hsl(332, 51%, 32%);
+    font-size: 1.25em;
+    margin-top: 10px;
+  }
+  
+  main {
+    display: flex;
+    flex-direction: column;
+    background: hsl(0, 0%, 100%);
+    justify-content: center;
+    align-items: center;
+    width: 35vw;
+    border-radius: 15px;
+    padding: 40px;
+    margin-bottom: 25px;
+    overflow: hidden;
+    top: 10%;
+    position: absolute;
+    anchor-name: --main-anchor;
+  }
+  
+  main img {
+    width: 100%;
+    border-radius: 15px;
+  }
+  
+  .recipe {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+  
+  .prep {
+    background: hsl(330, 100%, 98%);
+    margin-top: 25px;
+    border-radius: 15px;
+    padding: 10px 25px;
+    
+   & ul {
+     padding-inline-start: 5px;
+    }
+    
+    & ul > li {
+      margin-bottom: 10px;
+      letter-spacing: 0.2px;
+      display: flex;
+      align-items: center;
+    }
+    
+    & ul > li * {
+      padding-right: 5px;
+    }
+    
+    & ul > li::before {
+      content: "\25CF";
+      font-size: .7em;
+      margin-right: 1.1rem;
+    }
+  }
+  
+  .ingredients {
+    border-bottom: 1px solid hsl(30, 18%, 87%);
+    
+    & ul {
+      list-style: square inside;
+      padding-inline-start: 0px;
+      margin: 0;
+      padding-bottom: 20px;
+    }
+    
+    & ul > li {
+      line-height: 180%;
+      display: flex;
+      align-items: center;
+      padding: .25rem;
+    }
+    
+    & ul > li::before {
+      content: "\25AA";
+      margin-right: 1.1rem;
+    }
+  }
+  
+  .instructions {
+    border-bottom: 1px solid hsl(30, 18%, 87%);
+    
+    & ol {
+      margin: 0;
+      padding: 0 20px 20px;
+    }
+    
+    & ol > li {
+      line-height: 160%;
+      margin-bottom: 5px;
+      padding-left: 15px;
+    }
+    
+    & ol > li::marker {
+      color: hsl(14, 45%, 36%);
+      font-weight: 700;
+    }
+  }
+  
+  .table {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+  }
+  
+  .item {
+    display: flex;
+    border-bottom: 1px solid hsl(30, 18%, 87%);
+    padding: 3% 5% 3% 5%;
+    justify-content: space-between;
+  }
+  
+  .item:last-of-type {
+    border-bottom: none;
+  }
+  
+  .label {
+    width: 60%;
+  }
+  
+  .value {
+    color: hsl(14, 45%, 36%);
+    font-weight: 700;
+    width: 40%;
+  }
+  
+    footer { position: absolute; position-anchor: --main-anchor; top: anchor(bottom); margin-top: 25px; font-size: 11px; text-align: center; }
+    footer a { color: hsl(228, 45%, 44%); }
   </style>
 </head>
 <body>
+<main>
+  <img src="https://raw.githubusercontent.com/sola-fairy/recipe-page/refs/heads/main/assets/images/image-omelette.jpeg" alt="Simple Omelette">
+  <div class="recipe">
+  <h1>Simple Omelette Recipe</h1>
 
-  Simple Omelette Recipe
+  An easy and quick dish, perfect for any meal. This classic omelette combines beaten eggs cooked to perfection, optionally filled with your choice of cheese, vegetables, or meats.
+<div class="prep">
+  <h3>Preparation time</h3>
+  <ul>
+    <li><b>Total:</b> Approximately 10 minutes</li>
+    <li><b>Preparation:</b> 5 minutes</li>
+    <li><b>Cooking:</b> 5 minutes</li>
+  </ul>
+    </div>
+    <div class="ingredients">
+  <h2>Ingredients</h2>
+  <ul>
+  <li>2-3 large eggs</li>
+  <li>Salt, to taste</li>
+  <li>Pepper, to taste</li>
+  <li>1 tablespoon of butter or oil</li>
+  <li>Optional fillings: cheese, diced vegetables, cooked meats, herbs</li>
+  </ul>
+    </div>
+    <div class="instructions">
+  <h2>Instructions</h2>
+  <ol>
+  <li><b>Beat the eggs:</b> In a bowl, beat the eggs with a pinch of salt and pepper until they are well mixed. 
+  You can add a tablespoon of water or milk for a fluffier texture.</li>
 
-  An easy and quick dish, perfect for any meal. This classic omelette combines beaten eggs cooked 
-  to perfection, optionally filled with your choice of cheese, vegetables, or meats.
+  <li><b>Heat the pan:</b> Place a non-stick frying pan over medium heat and add butter or oil.</li>
 
-  Preparation time
+  <li><b>Cook the omelette:</b> Once the butter is melted and bubbling, pour in the eggs. Tilt the pan to ensure 
+  the eggs evenly coat the surface.</li>
 
-  Total: Approximately 10 minutes
-  Preparation: 5 minutes
-  Cooking: 5 minutes
+  <li><b>Add fillings (optional):</b> When the eggs begin to set at the edges but are still slightly runny in the 
+  middle, sprinkle your chosen fillings over one half of the omelette.</li>
 
-  Ingredients
+  <li><b>Fold and serve:</b> As the omelette continues to cook, carefully lift one edge and fold it over the 
+  fillings. Let it cook for another minute, then slide it onto a plate.</li>
 
-  2-3 large eggs
-  Salt, to taste
-  Pepper, to taste
-  1 tablespoon of butter or oil
-  Optional fillings: cheese, diced vegetables, cooked meats, herbs
-
-  Instructions
-
-  Beat the eggs: In a bowl, beat the eggs with a pinch of salt and pepper until they are well mixed. 
-  You can add a tablespoon of water or milk for a fluffier texture.
-
-  Heat the pan: Place a non-stick frying pan over medium heat and add butter or oil.
-
-  Cook the omelette: Once the butter is melted and bubbling, pour in the eggs. Tilt the pan to ensure 
-  the eggs evenly coat the surface.
-
-  Add fillings (optional): When the eggs begin to set at the edges but are still slightly runny in the 
-  middle, sprinkle your chosen fillings over one half of the omelette.
-
-  Fold and serve: As the omelette continues to cook, carefully lift one edge and fold it over the 
-  fillings. Let it cook for another minute, then slide it onto a plate.
-
-  Enjoy: Serve hot, with additional salt and pepper if needed.
-
-  Nutrition
+    <li><b>Enjoy:</b> Serve hot, with additional salt and pepper if needed.</li>
+      </ol></div>
+<div class="nutrition">
+  <h2>Nutrition</h2>
 
   The table below shows nutritional values per serving without the additional fillings.
+<div class="table">
+  <div class="item"><div class="label">Calories</div>
+    <div class="value">277kcal</div></div>
 
-  Calories
-  277kcal
+  <div class="item"><div class="label">Carbs</div>
+    <div class="value">0g</div></div>
 
-  Carbs
-  0g
+  <div class="item"><div class="label">Protein</div>
+    <div class="value">20g</div></div>
 
-  Protein
-  20g
-
-  Fat
-  22g
-  
-  <div class="attribution">
+  <div class="item"><div class="label">Fat</div>
+    <div class="value">22g</div></div>
+  </div></div></div>
+  </main>
+  <footer>
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+    Coded by <a href="http://sola-fairy.garden">sola</a>.
+  </footer>
 </body>
 </html>

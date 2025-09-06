@@ -1,6 +1,6 @@
 # Frontend Mentor - QR code component solution
 
-This is a solution to the [QR code component challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/qr-code-component-iux_sIO_H). 
+This is a solution to the [Recipe page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/qr-code-component-iux_sIO_H). 
 
 ## Table of contents
 
@@ -15,11 +15,11 @@ This is a solution to the [QR code component challenge on Frontend Mentor](https
 
 ## Overview
 
-This was a pretty simple challenge, but I'm pleased with how polished something can look with just a few style elements.
+Wow this required some finicky style rules. I'm sure I could've done it in a more efficient way.
 
 ### Screenshot
 
-![QR code screenshot](https://raw.githubusercontent.com/sola-fairy/qr-code/refs/heads/main/images/Screenshot%202025-09-05%20200312.png "QR Code Screenshot")
+![here](URL "here")
 
 ### Links
 
@@ -30,10 +30,11 @@ This was a pretty simple challenge, but I'm pleased with how polished something 
 
 ### What I learned
 
-* Use semi-transparent blurry box shadow to give containers depth
-* vw and vh units are percentages (100vw is 100% of the viewport width)
-* Center vertically and horizontally by giving body element ```display: flex;``` and defining size with vw & vh
-* Use landmarks like ```<main>```, ```<section>```, and ```<footer>``` to improve accessibility
+* Counter-reset and counter functions for ordered lists
+* Styling lists with ```::before``` and ```::marker``` pseudo elements
+* CSS selectors like ```&```, ```>```, ```*```, and ```:last-of-type```
+* Creating a "table" using flexbox
+* USE VW FOR BODY AND % FOR MAIN, not vw for both!
 
 ### Continued development
 
